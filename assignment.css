@@ -1,0 +1,13 @@
+div
+{
+  margin-top:10px;
+}
+
+label{
+  width: 120px;
+  display: inline-block;
+}
+
+input {
+  width: 80px;
+}

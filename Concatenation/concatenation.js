@@ -1,41 +1,60 @@
+var i = 0;
+var txtName = document.getElementById('txtname');
+var txtEmail = document.getElementById('txtEmail');
+var txtPhone = document.getElementById('txtPhone');
 
-var btn = document.getElementById('btnAdd')
-btn.addEventListener('click', addLine);
+var lblName = document.getElementById('lblName');
+var lblPhone = document.getElementById('lblPhone');
+var lblEmail = document.getElementById('lblEmail');
 
-// var t = "my " +  "country " + "name " + "is " + "PK";
-var i = 1;
-var a = "my ";
-a = a + "country";
-a = a + "name ";
-a = a + "is ";
-a = a + "pakistan";
+var btn = document.getElementById('btnAdd');
+btn.addEventListener('click', onAddClick);
 
-var x = 'my ';
-var y = "country";
-var statement = x + y;
+function onAddClick() {
+    var isNameValid = false;
+    var isEmailValid = false;
+    var isPhoneValid = false;
 
-console.log(statement);
+    if (txtName.value === '' || txtName.value == null) {
+        lblName.style.display = 'block';
+        isNameValid = false;
+    } else {
+        lblName.style.display = 'none';
+        isNameValid = true;
+    }
 
-function addLine() {
+    if (txtEmail.value === '' || txtEmail.value == null) {
+        lblEmail.style.display = 'block';
+        isEmailValid = false;
+    } else {
+        lblEmail.style.display = 'none';
+        isEmailValid = true;
+    }
 
-    var tbody = document.getElementById('datatable');
-    var str = "<tr><td>"+ i +"</td><td>Ali</td><td>test@test.com</td><td>01234rree</td></tr>";
-    console.log(i++);
-    
+    if (txtPhone.value === '' || txtPhone.value == null) {
+        lblPhone.style.display = 'block';
+        isPhoneValid = false;
+    } else {
+        lblPhone.style.display = 'none';
+        isPhoneValid = true;
+    }
 
-    tbody.innerHTML = tbody.innerHTML + str;
-    // tbody.append(str);
+    if (isNameValid && isPhoneValid && isEmailValid) {
+        Addline();
+        txtName.value = '';
+        txtEmail.value = '';
+        txtPhone.value = '';
+    }
+
 }
 
-// var str = "<tr><td>Ali</td><td>test@test.com</td><td>01234rree</td></tr>";
-// str = str + "<tr><td>Ali</td><td>test@test.com</td><td>01234rree</td></tr>";
-// str = str + "<tr><td>Ali</td><td>test@test.com</td><td>01234rree</td></tr>";
-// str = str + "<tr><td>Ali</td><td>test@test.com</td><td>01234rree</td></tr>";
-// str = str + "<tr><td>Ali</td><td>test@test.com</td><td>01234rree</td></tr>";
-// str = str + "<tr><td>Ali</td><td>test@test.com</td><td>01234rree</td></tr>";
-
-// var tbody = document.getElementById('datatable');
-// tbody.innerHTML = str;
-
-
-
+function Addline() {
+    i = i + 1;
+    var tbody = document.getElementById('datatable');
+    var str = "<tr><td>" + i
+        + "</td><td>" + txtName.value
+        + "</td><td>" + txtEmail.value
+        + "</td><td>" + txtPhone.value
+        + "</td></tr>";
+    tbody.innerHTML = tbody.innerHTML + str;
+} 

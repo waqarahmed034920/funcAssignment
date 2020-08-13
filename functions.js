@@ -2,8 +2,8 @@
 
 var x, y, ans;
 var answerBox = document.getElementById('txtans');
-var input1 = document.getElementById('txtfirstnumber');
-var input2 = document.getElementById('txtsecondnumber');
+var txtName = document.getElementById('txtfirstnumber');
+var txtEmail = document.getElementById('txtsecondnumber');
 var rbAdd = document.getElementById('rbAdd');
 var rbSub = document.getElementById('rbSub');
 var rbMul = document.getElementById('rbMul');
@@ -13,8 +13,8 @@ var btn = document.getElementById('btnAnswer');
 btn.addEventListener('click', onclick);
 
 function onAnswerClick() {
-  x = input1.value;
-  y = input2.value;
+  x = txtName.value;
+  y = txtEmail.value;
 
 
 

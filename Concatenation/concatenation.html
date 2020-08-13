@@ -9,10 +9,41 @@
         div {
             padding-top: 30px;
         }
+
+        .error-lable {
+            color: tomato;
+            font-size: smaller;
+            display: none;
+        }
     </style>
 </head>
 
 <body>
+
+    <div>
+        <label for="txtname">
+            Name:
+        </label>
+        <input type="text" placeholder="name" id="txtname" required>
+        <label id="lblName" class="error-lable">Please enter name</label>
+    </div>
+    <div>
+        <label for="txtEmail">
+            Email:
+        </label>
+        <input type="text" placeholder="Email" id="txtEmail" required>
+        <label id="lblEmail" class="error-lable">Please enter emai </label>
+    </div>
+    <div>
+        <label for="txtPhone">
+            phone:
+        </label>
+        <input type="text" placeholder="phone" id="txtPhone" required>
+        <label id="lblPhone" class="error-lable">Please enter phione</label>
+    </div>
+    <div>
+        <button id="btnAdd">Add Line In Table</button>
+    </div>
 
     <div>
         <table border="2">
@@ -30,9 +61,6 @@
             </tbody>
         </table>
 
-    </div>
-    <div>
-        <button id="btnAdd">Add Line In Table</button>
     </div>
 
 </body>
